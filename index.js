@@ -16,13 +16,15 @@ client.on('ready', () => {
   }, 5000); // Change status every 5 seconds
 });
 
-client.user.setPresence({
-  activity: {
-    name: '.gg/chillzone',
-    type: 'STREAMING',
-    url: 'https://twitch.tv/discord'
-  },
-  status: 'dnd'
+client.once('ready', () => {
+  client.user.setPresence({
+    activity: {
+      name: '.gg/chillzone',
+      type: 'STREAMING',
+      url: 'https://twitch.tv/discord'
+    },
+    status: 'dnd'
+  });
 });
 
 client.login(process.env.token);
